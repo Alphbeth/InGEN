@@ -7,7 +7,13 @@ import { Phone, Mail, MapPin, CheckCircle2, ArrowRight } from 'lucide-react'
 const contactDetails = [
   { icon: Phone, label: 'Telefon', value: '+48 500 495 085', href: 'tel:+48500495085' },
   { icon: Mail, label: 'E-mail', value: 'kontakt@ingensystems.pl', href: 'mailto:kontakt@ingensystems.pl' },
-  { icon: MapPin, label: 'Firma', value: 'InGEN Systems Marcin Snoch', href: null },
+  { icon: MapPin, label: 'Firma', value: 'InGEN Systems', href: null },
+  {
+    icon: MapPin,
+    label: 'Adres',
+    value: 'ul. Wyspiańskiego 31, 47-303 Krapkowice',
+    href: 'https://www.google.com/maps/search/?api=1&query=ul.+Wyspia%C5%84skiego+31%2C+47-303+Krapkowice',
+  },
   { icon: MapPin, label: 'NIP', value: '7561715622', href: null },
   { icon: MapPin, label: 'REGON', value: '545413763', href: null },
 ]
@@ -105,7 +111,7 @@ export function ContactSection() {
                       name="institution"
                       type="text"
                       className={inputClass}
-                      placeholder="Szkoła Podstawowa nr 1"
+                      placeholder="Nazwa placówki"
                     />
                   </Field>
                 </div>
@@ -139,7 +145,7 @@ export function ContactSection() {
                     required
                     rows={4}
                     className={`${inputClass} resize-none`}
-                    placeholder="Opisz krótko potrzeby swojej placówki..."
+                    placeholder="W czym możemy pomóc?"
                   />
                 </Field>
 
