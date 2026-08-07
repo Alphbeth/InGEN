@@ -1,23 +1,21 @@
 import { X, Check } from 'lucide-react'
 
 const problems = [
-  'WiFi nie działa w całym budynku',
-  'Brak dokumentacji infrastruktury',
-  'Brak kopii zapasowych danych',
-  'Nikt nie zna haseł administratora',
-  'Przestarzała infrastruktura sieciowa',
-  'Częste, powtarzające się awarie',
-  'Wszystko zależy od jednej osoby',
+  'Brak pewnych kopii zapasowych — Awaria jednego komputera nie powinna oznaczać utraty ważnych dokumentów.',
+  'Nieaktualna dokumentacja IT — Brak informacji o konfiguracji sieci i urządzeń utrudnia szybkie usuwanie awarii.',
+  'Problemy z siecią Wi-Fi — Niestabilna sieć utrudnia pracę nauczycieli, sekretariatu i uczniów.',
+  'Rosnąca liczba awarii — Brak regularnej administracji powoduje narastanie problemów technicznych.',
+  'Brak centralnego zarządzania sprzętem — Komputery i urządzenia powinny być zarządzane w uporządkowany i bezpieczny sposób.',
+  'Brak stałego wsparcia IT — Drobne problemy potrafią zatrzymać pracę całej placówki.',
 ]
 
 const solutions = [
-  'Profesjonalna, aktualna dokumentacja',
-  'Stabilna i przewidywalna infrastruktura',
-  'Bezpieczne, testowane kopie zapasowe',
-  'Szybka reakcja na każde zgłoszenie',
-  'Nowoczesna, wydajna sieć',
-  'Bieżąca, planowa konserwacja',
-  'Jeden odpowiedzialny partner IT',
+  'Bezpieczne kopie zapasowe',
+  'Aktualna dokumentacja infrastruktury',
+  'Stabilna sieć komputerowa i Wi-Fi',
+  'Regularna administracja systemami',
+  'Uporządkowane zarządzanie sprzętem',
+  'Niezwłoczna reakcja na zgłoszenia zgodnie z ustalonymi zasadami współpracy',
 ]
 
 export function ProblemsSection() {
@@ -27,12 +25,16 @@ export function ProblemsSection() {
         <div className="mx-auto max-w-2xl text-center">
           <span className="inline-flex items-center gap-2 text-sm font-semibold text-accent">
             <span className="h-px w-6 bg-accent" aria-hidden="true" />
-            Zanim zaczniemy współpracę
+            Problemy i rozwiązania
             <span className="h-px w-6 bg-accent" aria-hidden="true" />
           </span>
           <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-balance text-foreground sm:text-4xl">
-            Znamy problemy IT w szkołach. I wiemy, jak je rozwiązać.
+            Czy te problemy brzmią znajomo?
           </h2>
+          <p className="mt-4 text-lg leading-relaxed text-pretty text-muted-foreground">
+            Wiele szkół zmaga się z podobnymi wyzwaniami. Pomagamy uporządkować infrastrukturę IT,
+            zwiększyć bezpieczeństwo danych i zapewnić sprawne działanie sprzętu każdego dnia.
+          </p>
         </div>
 
         <div className="mt-14 grid gap-6 lg:grid-cols-2 lg:gap-8">
@@ -43,7 +45,7 @@ export function ProblemsSection() {
                 <X className="size-5" aria-hidden="true" />
               </span>
               <h3 className="font-heading text-lg font-semibold text-foreground">
-                Typowe problemy w placówkach
+                Typowe problemy
               </h3>
             </div>
             <ul className="mt-6 flex flex-col divide-y divide-border/70">
@@ -63,7 +65,7 @@ export function ProblemsSection() {
               <span className="flex size-9 items-center justify-center rounded-full bg-accent text-accent-foreground">
                 <Check className="size-5" aria-hidden="true" />
               </span>
-              <h3 className="font-heading text-lg font-semibold">Jak rozwiązuje to InGEN</h3>
+              <h3 className="font-heading text-lg font-semibold">Rozwiązania</h3>
             </div>
             <ul className="relative mt-6 flex flex-col divide-y divide-primary-foreground/10">
               {solutions.map((item) => (
