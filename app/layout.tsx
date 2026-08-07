@@ -16,6 +16,8 @@ const jakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://ingensystems.pl'),
+  alternates: { canonical: '/' },
   title: 'InGEN Systems | Profesjonalna opieka informatyczna dla szkół',
   description:
     'Kompleksowa administracja IT dla szkół. Sieci komputerowe, bezpieczeństwo danych, kopie zapasowe, dokumentacja infrastruktury oraz wsparcie techniczne.',
@@ -33,6 +35,7 @@ export const metadata: Metadata = {
       'Kompleksowa administracja IT dla szkół. Sieci komputerowe, bezpieczeństwo danych, kopie zapasowe, dokumentacja infrastruktury oraz wsparcie techniczne.',
     locale: 'pl_PL',
     type: 'website',
+    url: '/',
   },
 }
 
