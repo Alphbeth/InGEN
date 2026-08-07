@@ -3,75 +3,46 @@ import {
   DatabaseBackup,
   Wifi,
   MonitorSmartphone,
-  ShieldCheck,
   FileText,
   Headset,
-  Globe,
-  Printer,
-  Radar,
-  RefreshCw,
 } from 'lucide-react'
 
 const services = [
   {
     icon: Network,
-    title: 'Stabilna sieć szkolna',
-    description: 'Projektujemy i utrzymujemy sieć, która działa niezawodnie w każdej sali.',
-  },
-  {
-    icon: DatabaseBackup,
-    title: 'Bezpieczne kopie zapasowe',
-    description: 'Automatyczne backupy i sprawdzone przywracanie kluczowych danych.',
-  },
-  {
-    icon: Wifi,
-    title: 'Niezawodne WiFi',
-    description: 'Pełne pokrycie budynku i stabilny dostęp dla uczniów oraz kadry.',
+    title: 'Administracja siecią komputerową',
+    description:
+      'Konfiguracja i utrzymanie sieci komputerowej, routerów, przełączników oraz urządzeń sieciowych.',
   },
   {
     icon: MonitorSmartphone,
-    title: 'Zarządzanie pracowniami',
-    description: 'Konfiguracja, aktualizacje i serwis komputerowych stanowisk uczniowskich.',
+    title: 'Opieka nad komputerami i serwerami',
+    description:
+      'Bieżąca administracja komputerami, serwerami oraz urządzeniami wykorzystywanymi w placówce.',
   },
   {
-    icon: ShieldCheck,
-    title: 'Cyberbezpieczeństwo',
-    description: 'Ochrona danych, zabezpieczenia sieci i zgodność z wymogami RODO.',
+    icon: DatabaseBackup,
+    title: 'Kopie zapasowe i bezpieczeństwo danych',
+    description:
+      'Wdrażanie, kontrola oraz monitorowanie kopii zapasowych i ochrona najważniejszych danych szkoły.',
   },
   {
     icon: FileText,
-    title: 'Dokumentacja infrastruktury',
-    description: 'Przejrzysta, aktualna dokumentacja urządzeń, haseł i procedur.',
+    title: 'Dokumentacja infrastruktury IT',
+    description:
+      'Tworzenie i aktualizacja dokumentacji sieci, sprzętu oraz konfiguracji systemów.',
+  },
+  {
+    icon: Wifi,
+    title: 'Zarządzanie siecią Wi-Fi',
+    description:
+      'Konfiguracja i optymalizacja sieci bezprzewodowej zapewniająca stabilną pracę użytkowników.',
   },
   {
     icon: Headset,
-    title: 'Wsparcie techniczne',
-    description: 'Pomoc dla nauczycieli i pracowników — zdalnie oraz na miejscu.',
-  },
-  {
-    icon: Globe,
-    title: 'Tworzenie stron WWW',
-    description: 'Nowoczesne, dostępne i responsywne strony internetowe placówek.',
-  },
-  {
-    icon: Printer,
-    title: 'Drukarki i tonery',
-    description: 'Zarządzanie urządzeniami drukującymi i dostawami materiałów.',
-  },
-  {
-    icon: Radar,
-    title: 'Monitoring systemów',
-    description: 'Stały nadzór nad kluczowymi urządzeniami i szybka reakcja na awarie.',
-  },
-  {
-    icon: RefreshCw,
-    title: 'Modernizacja infrastruktury',
-    description: 'Planowa wymiana i rozbudowa sprzętu bez zakłócania pracy szkoły.',
-  },
-  {
-    icon: Radar,
-    title: 'Jeden partner IT',
-    description: 'Całość infrastruktury pod opieką jednego, odpowiedzialnego zespołu.',
+    title: 'Wsparcie techniczne użytkowników',
+    description:
+      'Niezwłoczna reakcja na zgłoszenia oraz pomoc w rozwiązywaniu bieżących problemów technicznych.',
   },
 ]
 
@@ -85,11 +56,11 @@ export function ServicesSection() {
             Usługi
           </span>
           <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-balance text-foreground sm:text-4xl">
-            Wszystko, czego potrzebuje IT w placówce oświatowej
+            Kompleksowa opieka informatyczna dla szkół
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-pretty text-muted-foreground">
-            Jedno źródło odpowiedzialności za całą infrastrukturę informatyczną Twojej szkoły —
-            od sieci i serwerów po dokumentację i wsparcie użytkowników.
+            Zapewniamy profesjonalną administrację infrastrukturą IT, bezpieczeństwo danych oraz
+            bieżące wsparcie techniczne dla placówek oświatowych.
           </p>
         </div>
 
