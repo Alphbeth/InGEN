@@ -100,10 +100,10 @@ export function HeroSection() {
 }
 
 const stats = [
-  { value: '100%', label: 'Udokumentowanej infrastruktury' },
+  { value: 'Bieżąca', label: 'dokumentacja infrastruktury' },
   { value: 'Niezwłocznie', label: 'Reakcja na zgłoszenie' },
   { value: '24/7', label: 'Monitoring kluczowych systemów' },
-  { value: '1', label: 'Odpowiedzialny partner IT' },
+  { value: 'Stała', label: 'opieka IT' },
 ]
 
 function StatStrip() {
