@@ -20,10 +20,39 @@ const contactDetails = [
 
 export function ContactSection() {
   const [submitted, setSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
-  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
-    setSubmitted(true)
+    const form = event.currentTarget
+    const formData = new FormData(form)
+    const controller = new AbortController()
+    const timeout = window.setTimeout(() => controller.abort(), 10000)
+
+    setSubmitError(false)
+    setIsSubmitting(true)
+
+    try {
+      const response = await fetch('/api/contact.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(Object.fromEntries(formData)),
+        signal: controller.signal,
+      })
+
+      if (!response.ok) {
+        throw new Error('Contact form request failed')
+      }
+
+      setSubmitted(true)
+      form.reset()
+    } catch {
+      setSubmitError(true)
+    } finally {
+      window.clearTimeout(timeout)
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -88,11 +117,19 @@ export function ContactSection() {
                   Dziękujemy za wiadomość
                 </h3>
                 <p className="mt-2 max-w-sm text-muted-foreground">
-                  Skontaktujemy się z Tobą najszybciej, jak to możliwe.
+                  Skontaktujemy się z Państwem niezwłocznie.
                 </p>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col gap-5">
+                <input
+                  type="text"
+                  name="website"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  aria-hidden="true"
+                  className="sr-only"
+                />
                 <div className="grid gap-5 sm:grid-cols-2">
                   <Field id="name" label="Imię i nazwisko" required>
                     <input
@@ -153,9 +190,14 @@ export function ContactSection() {
                   type="submit"
                   className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
                 >
-                  Wyślij zapytanie
+                  {isSubmitting ? 'Wysyłanie...' : 'Wyślij zapytanie'}
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                 </button>
+                {submitError && (
+                  <p role="alert" className="text-xs leading-relaxed text-destructive">
+                    Nie udało się wysłać wiadomości. Prosimy spróbować ponownie za chwilę.
+                  </p>
+                )}
                 <p className="text-xs leading-relaxed text-muted-foreground">
                   Wysyłając formularz akceptujesz przetwarzanie danych w celu kontaktu zgodnie z
                   Polityką prywatności.
