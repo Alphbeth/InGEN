@@ -2,6 +2,11 @@
 
 declare(strict_types=1);
 
+ini_set('display_errors', '0');
+ini_set('log_errors', '1');
+error_reporting(E_ALL);
+ini_set('error_log', __DIR__ . '/logs/php-error.log');
+
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 
@@ -88,9 +93,26 @@ if ($SMTP_HOST === '' || $SMTP_USER === '' || $SMTP_PASS === '' || $SMTP_FROM ==
 }
 
 try {
-    require_once __DIR__ . '/PHPMailer/Exception.php';
-    require_once __DIR__ . '/PHPMailer/SMTP.php';
-    require_once __DIR__ . '/PHPMailer/PHPMailer.php';
+    $phpMailerFiles = [
+        __DIR__ . '/PHPMailer/Exception.php',
+        __DIR__ . '/PHPMailer/SMTP.php',
+        __DIR__ . '/PHPMailer/PHPMailer.php',
+    ];
+
+    foreach ($phpMailerFiles as $phpMailerFile) {
+        if (!file_exists($phpMailerFile)) {
+            logMailError('Brakuje pliku PHPMailer: ' . basename($phpMailerFile));
+            respond(500, ['success' => false, 'error' => 'Brakuje pliku biblioteki wysyłki.']);
+        }
+    }
+
+    logMailError('Starting mail send...');
+
+    foreach ($phpMailerFiles as $phpMailerFile) {
+        require_once $phpMailerFile;
+    }
+
+    logMailError('Załadowano biblioteki PHPMailer.');
 
     $mail = new PHPMailer(true);
     $mail->isSMTP();
@@ -112,6 +134,8 @@ try {
     $mail->CharSet = PHPMailer::CHARSET_UTF8;
     $mail->isHTML(false);
 
+    logMailError('Skonfigurowano SMTP.');
+
     $mail->setFrom($SMTP_FROM, $SMTP_FROM_NAME);
     $mail->addAddress($SMTP_TO);
     $mail->addReplyTo($email, $name);
@@ -124,7 +148,9 @@ try {
         . 'Data wysłania: ' . date('Y-m-d H:i:s') . "\n"
         . "Adres IP: {$ipAddress}";
 
+    logMailError('Rozpoczynanie wysyłki wiadomości.');
     $mail->send();
+    logMailError('Wiadomość została wysłana.');
     respond(200, ['success' => true]);
 } catch (Exception $exception) {
     logMailError('Błąd SMTP: ' . $exception->getMessage());
