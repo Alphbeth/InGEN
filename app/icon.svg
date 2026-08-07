@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="InGEN Systems">
+  <rect width="64" height="64" rx="14" fill="#0f172a"/>
+  <path d="M18 16h8v32h-8zm20 0h8v32h-8z" fill="#fff"/>
+  <path d="M26 22h12v8H26zm0 12h12v8H26z" fill="#38bdf8"/>
+</svg>
