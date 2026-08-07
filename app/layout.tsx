@@ -16,10 +16,24 @@ const jakarta = Plus_Jakarta_Sans({
 })
 
 export const metadata: Metadata = {
-  title: 'InGEN Systems — Kompleksowa opieka informatyczna dla szkół',
+  title: 'InGEN Systems | Profesjonalna opieka informatyczna dla szkół',
   description:
-    'Administracja sieciami, bezpieczeństwo danych, kopie zapasowe, wsparcie użytkowników oraz nowoczesne rozwiązania IT dla placówek oświatowych w Polsce.',
-  generator: 'v0.app',
+    'Kompleksowa administracja IT dla szkół. Sieci komputerowe, bezpieczeństwo danych, kopie zapasowe, dokumentacja infrastruktury oraz wsparcie techniczne.',
+  keywords: [
+    'opieka informatyczna dla szkół',
+    'administracja IT',
+    'sieci komputerowe',
+    'bezpieczeństwo danych',
+    'kopie zapasowe',
+  ],
+  robots: { index: true, follow: true },
+  openGraph: {
+    title: 'InGEN Systems | Profesjonalna opieka informatyczna dla szkół',
+    description:
+      'Kompleksowa administracja IT dla szkół. Sieci komputerowe, bezpieczeństwo danych, kopie zapasowe, dokumentacja infrastruktury oraz wsparcie techniczne.',
+    locale: 'pl_PL',
+    type: 'website',
+  },
 }
 
 export const viewport: Viewport = {
