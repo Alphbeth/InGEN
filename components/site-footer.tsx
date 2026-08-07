@@ -19,12 +19,11 @@ export function SiteFooter() {
           <div className="lg:col-span-2">
             <Logo inverted className="h-7" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-primary-foreground/70">
-              Kompleksowa opieka informatyczna dla szkół, przedszkoli, jednostek samorządowych i
-              placówek oświatowych w całej Polsce.
+              Profesjonalna opieka informatyczna dla szkół.
             </p>
             <p className="mt-6 flex items-center gap-2 text-sm text-primary-foreground/60">
               <MapPin className="size-4" aria-hidden="true" />
-              Działamy na terenie całej Polski
+              InGEN Systems Marcin Snoch
             </p>
           </div>
 
@@ -49,12 +48,24 @@ export function SiteFooter() {
             <ul className="mt-4 flex flex-col gap-3">
               <li>
                 <a
-                  href="tel:+48500100200"
+                  href="tel:+48500495085"
                   className="flex items-center gap-2 text-sm text-primary-foreground/70 transition-colors hover:text-primary-foreground"
                 >
                   <Phone className="size-4" aria-hidden="true" />
-                  +48 500 100 200
+                  +48 500 495 085
                 </a>
+              </li>
+              <li>
+                <span className="flex items-center gap-2 text-sm text-primary-foreground/70">
+                  <MapPin className="size-4" aria-hidden="true" />
+                  NIP: 7561715622
+                </span>
+              </li>
+              <li>
+                <span className="flex items-center gap-2 text-sm text-primary-foreground/70">
+                  <MapPin className="size-4" aria-hidden="true" />
+                  REGON: 545413763
+                </span>
               </li>
               <li>
                 <a
