@@ -1,0 +1,126 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@theme inline {
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-success: var(--success);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+}
+
+:root {
+  color-scheme: light;
+  --radius: 0.75rem;
+
+  /* Paper + ink neutrals (logo-driven monochrome) */
+  --background: oklch(0.995 0.001 260);
+  --foreground: oklch(0.19 0.006 260);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.19 0.006 260);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.19 0.006 260);
+
+  /* Ink brand (matches black logo) */
+  --primary: oklch(0.2 0.006 260);
+  --primary-foreground: oklch(0.98 0.002 260);
+
+  /* Cool paper surfaces */
+  --secondary: oklch(0.965 0.003 260);
+  --secondary-foreground: oklch(0.28 0.006 260);
+  --muted: oklch(0.972 0.002 260);
+  --muted-foreground: oklch(0.5 0.008 260);
+
+  /* Restrained cobalt accent (used sparingly) */
+  --accent: oklch(0.55 0.15 258);
+  --accent-foreground: oklch(0.99 0.002 260);
+
+  --success: oklch(0.62 0.13 155);
+  --destructive: oklch(0.58 0.2 25);
+  --border: oklch(0.925 0.003 260);
+  --input: oklch(0.925 0.003 260);
+  --ring: oklch(0.55 0.15 258);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: 'ss01', 'cv01', 'cv03';
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  /* Subtle engineered dot grid used behind hero / section accents */
+  .bg-dot-grid {
+    background-image: radial-gradient(
+      var(--color-border) 1px,
+      transparent 1px
+    );
+    background-size: 22px 22px;
+  }
+
+  .bg-grid-lines {
+    background-image:
+      linear-gradient(to right, var(--color-border) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--color-border) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+
+  .mask-fade-b {
+    -webkit-mask-image: linear-gradient(to bottom, black 55%, transparent);
+    mask-image: linear-gradient(to bottom, black 55%, transparent);
+  }
+
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translateY(14px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-rise {
+    animation: rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rise {
+    animation: none;
+  }
+}
