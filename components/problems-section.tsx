@@ -1,12 +1,12 @@
 import { X, Check } from 'lucide-react'
 
 const problems = [
-  'Brak pewnych kopii zapasowych — Awaria jednego komputera nie powinna oznaczać utraty ważnych dokumentów.',
-  'Nieaktualna dokumentacja IT — Brak informacji o konfiguracji sieci i urządzeń utrudnia szybkie usuwanie awarii.',
-  'Problemy z siecią Wi-Fi — Niestabilna sieć utrudnia pracę nauczycieli, sekretariatu i uczniów.',
-  'Rosnąca liczba awarii — Brak regularnej administracji powoduje narastanie problemów technicznych.',
-  'Brak centralnego zarządzania sprzętem — Komputery i urządzenia powinny być zarządzane w uporządkowany i bezpieczny sposób.',
-  'Brak stałego wsparcia IT — Drobne problemy potrafią zatrzymać pracę całej placówki.',
+  'Brak pewnych kopii zapasowych',
+  'Nieaktualna dokumentacja IT',
+  'Problemy z siecią Wi-Fi',
+  'Rosnąca liczba awarii',
+  'Brak centralnego zarządzania sprzętem',
+  'Brak stałego wsparcia IT',
 ]
 
 const solutions = [
