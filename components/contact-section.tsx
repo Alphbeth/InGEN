@@ -5,9 +5,11 @@ import Image from 'next/image'
 import { Phone, Mail, MapPin, CheckCircle2, ArrowRight } from 'lucide-react'
 
 const contactDetails = [
-  { icon: Phone, label: 'Telefon', value: '+48 500 100 200', href: 'tel:+48500100200' },
+  { icon: Phone, label: 'Telefon', value: '+48 500 495 085', href: 'tel:+48500495085' },
   { icon: Mail, label: 'E-mail', value: 'kontakt@ingensystems.pl', href: 'mailto:kontakt@ingensystems.pl' },
-  { icon: MapPin, label: 'Obszar działania', value: 'Cała Polska', href: null },
+  { icon: MapPin, label: 'Firma', value: 'InGEN Systems Marcin Snoch', href: null },
+  { icon: MapPin, label: 'NIP', value: '7561715622', href: null },
+  { icon: MapPin, label: 'REGON', value: '545413763', href: null },
 ]
 
 export function ContactSection() {
@@ -28,11 +30,10 @@ export function ContactSection() {
               Kontakt
             </span>
             <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-balance text-foreground sm:text-4xl">
-              Umów bezpłatny audyt IT
+              Skontaktuj się z nami
             </h2>
             <p className="mt-4 max-w-lg text-lg leading-relaxed text-pretty text-muted-foreground">
-              Skontaktuj się z nami — odpowiemy na Twoje pytania i zaproponujemy rozwiązania
-              dopasowane do Twojej placówki. Bez zobowiązań.
+              Jeżeli szukają Państwo profesjonalnej opieki informatycznej dla szkoły lub chcą omówić możliwości współpracy, zapraszam do kontaktu.
             </p>
 
             <ul className="mt-8 flex flex-col gap-3">
@@ -81,7 +82,7 @@ export function ContactSection() {
                   Dziękujemy za wiadomość
                 </h3>
                 <p className="mt-2 max-w-sm text-muted-foreground">
-                  Skontaktujemy się z Tobą najszybciej, jak to możliwe, aby umówić bezpłatny audyt.
+                  Skontaktujemy się z Tobą najszybciej, jak to możliwe.
                 </p>
               </div>
             ) : (
@@ -127,7 +128,7 @@ export function ContactSection() {
                       type="tel"
                       autoComplete="tel"
                       className={inputClass}
-                      placeholder="+48 500 100 200"
+                      placeholder="+48 500 495 085"
                     />
                   </Field>
                 </div>
@@ -146,7 +147,7 @@ export function ContactSection() {
                   type="submit"
                   className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-base font-semibold text-primary-foreground transition-opacity hover:opacity-90"
                 >
-                  Wyślij zgłoszenie
+                  Wyślij zapytanie
                   <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
                 </button>
                 <p className="text-xs leading-relaxed text-muted-foreground">
