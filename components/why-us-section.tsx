@@ -3,33 +3,33 @@ import { Zap, FileCheck, Handshake, LifeBuoy, Lock, UserRoundCheck, ArrowRight }
 const advantages = [
   {
     icon: Zap,
-    title: 'Szybki czas reakcji',
-    description: 'Reagujemy sprawnie, aby zminimalizować przerwy w pracy placówki.',
+    title: 'Bezpieczeństwo danych',
+    description: 'Chronimy najważniejsze dane placówki i wspieramy ich bezpieczne przetwarzanie.',
   },
   {
     icon: FileCheck,
-    title: 'Profesjonalna dokumentacja',
-    description: 'Każde działanie jest udokumentowane i łatwe do weryfikacji.',
+    title: 'Uporządkowana infrastruktura',
+    description: 'Dbamy o przejrzystą konfigurację sieci, sprzętu i systemów.',
   },
   {
     icon: Handshake,
-    title: 'Przejrzysta współpraca',
-    description: 'Jasne zasady, stałe stawki i pełna komunikacja bez niespodzianek.',
+    title: 'Stała opieka',
+    description: 'Zapewniamy bieżącą administrację infrastruktury informatycznej.',
   },
   {
     icon: LifeBuoy,
-    title: 'Długoterminowe partnerstwo',
-    description: 'Budujemy stałe relacje oparte na zaufaniu i niezawodności.',
+    title: 'Przejrzyste zasady współpracy',
+    description: 'Ustalamy jasny zakres działań i zasady komunikacji.',
   },
   {
     icon: Lock,
-    title: 'Bezpieczeństwo przede wszystkim',
-    description: 'Ochrona danych uczniów i pracowników zgodnie z RODO.',
+    title: 'Dokumentacja techniczna',
+    description: 'Prowadzimy aktualną dokumentację infrastruktury IT.',
   },
   {
     icon: UserRoundCheck,
-    title: 'Indywidualne podejście',
-    description: 'Rozwiązania dopasowane do potrzeb i budżetu każdej placówki.',
+    title: 'Niezwłoczna reakcja na zgłoszenia',
+    description: 'Pomagamy w rozwiązywaniu bieżących problemów technicznych.',
   },
 ]
 
@@ -43,17 +43,16 @@ export function WhyUsSection() {
             Dlaczego my
           </span>
           <h2 className="mt-4 font-heading text-3xl font-bold tracking-tight text-balance text-foreground sm:text-4xl">
-            Odpowiedzialność, na której możesz polegać
+            Dlaczego warto współpracować z InGEN Systems?
           </h2>
           <p className="mt-4 text-lg leading-relaxed text-pretty text-muted-foreground">
-            Nie sprzedajemy technologii. Bierzemy odpowiedzialność za to, by IT w Twojej placówce
-            po prostu działało — dziś i za kilka lat.
+            Stawiamy na długoterminową współpracę, bezpieczeństwo danych oraz uporządkowaną infrastrukturę informatyczną.
           </p>
           <a
             href="#kontakt"
             className="group mt-6 inline-flex items-center gap-2 text-sm font-semibold text-foreground transition-colors hover:text-accent"
           >
-            Porozmawiajmy o Twojej placówce
+            Skontaktuj się z nami
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
           </a>
         </div>
