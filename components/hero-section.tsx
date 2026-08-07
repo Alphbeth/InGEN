@@ -2,7 +2,7 @@ import Image from 'next/image'
 import { ArrowRight, ShieldCheck, Clock, FileCheck } from 'lucide-react'
 
 const trustPoints = [
-  { icon: Clock, label: 'Szybki czas reakcji' },
+  { icon: Clock, label: 'Niezwłoczna reakcja' },
   { icon: ShieldCheck, label: 'Bezpieczeństwo danych' },
   { icon: FileCheck, label: 'Pełna dokumentacja' },
 ]
@@ -10,7 +10,6 @@ const trustPoints = [
 export function HeroSection() {
   return (
     <section id="start" className="relative overflow-hidden border-b border-border/70">
-      {/* engineered background layers */}
       <div
         className="pointer-events-none absolute inset-0 -z-10 bg-dot-grid opacity-60 mask-fade-b"
         aria-hidden="true"
@@ -27,7 +26,7 @@ export function HeroSection() {
               <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent/50" />
               <span className="relative inline-flex size-2 rounded-full bg-accent" />
             </span>
-            Zaufany partner IT placówek oświatowych
+            Profesjonalna opieka informatyczna dla szkół
           </span>
 
           <h1 className="mt-6 font-heading text-4xl font-extrabold leading-[1.05] tracking-tight text-balance text-foreground sm:text-5xl lg:text-6xl">
@@ -38,8 +37,9 @@ export function HeroSection() {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-pretty text-muted-foreground">
-            Zapewniamy kompleksową administrację infrastrukturą IT, bezpieczeństwo danych, kopie
-            zapasowe, dokumentację oraz wsparcie techniczne dla placówek oświatowych.
+            InGEN Systems zapewnia kompleksową opiekę informatyczną dla szkół — administrację sieci
+            i komputerów, bezpieczeństwo danych, kopie zapasowe, dokumentację infrastruktury oraz
+            bieżące wsparcie techniczne.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -47,14 +47,14 @@ export function HeroSection() {
               href="#kontakt"
               className="group inline-flex items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-base font-semibold text-primary-foreground transition-all hover:opacity-90"
             >
-              Umów bezpłatny audyt
+              Skontaktuj się z nami
               <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
             </a>
             <a
               href="#uslugi"
               className="inline-flex items-center justify-center rounded-full border border-border bg-card px-6 py-3.5 text-base font-semibold text-foreground shadow-sm transition-colors hover:bg-secondary"
             >
-              Poznaj nasze usługi
+              Poznaj ofertę
             </a>
           </div>
 
@@ -101,7 +101,7 @@ export function HeroSection() {
 
 const stats = [
   { value: '100%', label: 'Udokumentowanej infrastruktury' },
-  { value: '<24h', label: 'Czas reakcji na zgłoszenie' },
+  { value: 'Niezwłocznie', label: 'Reakcja na zgłoszenie' },
   { value: '24/7', label: 'Monitoring kluczowych systemów' },
   { value: '1', label: 'Odpowiedzialny partner IT' },
 ]
