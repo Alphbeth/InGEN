@@ -6,10 +6,10 @@ import { cn } from '@/lib/utils'
 import { Logo } from '@/components/logo'
 
 const navItems = [
-  { label: 'Start', href: '#start' },
-  { label: 'Usługi', href: '#uslugi' },
-  { label: 'Rozwiązania', href: '#rozwiazania' },
-  { label: 'O nas', href: '#o-nas' },
+  { label: 'Strona główna', href: '#start' },
+  { label: 'Oferta', href: '#uslugi' },
+  { label: 'Problemy', href: '#rozwiazania' },
+  { label: 'Współpraca', href: '#o-nas' },
   { label: 'Kontakt', href: '#kontakt' },
 ]
 
@@ -55,7 +55,7 @@ export function SiteHeader() {
             href="#kontakt"
             className="group inline-flex items-center gap-1.5 rounded-full bg-primary px-5 py-2.5 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90"
           >
-            Umów bezpłatny audyt
+            Skontaktuj się z nami
             <ArrowRight className="size-4 transition-transform group-hover:translate-x-0.5" aria-hidden="true" />
           </a>
         </div>
@@ -94,7 +94,7 @@ export function SiteHeader() {
             onClick={() => setOpen(false)}
             className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-full bg-primary px-5 py-3 text-sm font-semibold text-primary-foreground"
           >
-            Umów bezpłatny audyt
+            Skontaktuj się z nami
             <ArrowRight className="size-4" aria-hidden="true" />
           </a>
         </nav>
