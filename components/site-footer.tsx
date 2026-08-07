@@ -2,10 +2,10 @@ import { Phone, Mail, MapPin } from 'lucide-react'
 import { Logo } from '@/components/logo'
 
 const footerNav = [
-  { label: 'Start', href: '#start' },
-  { label: 'Usługi', href: '#uslugi' },
-  { label: 'Rozwiązania', href: '#rozwiazania' },
-  { label: 'O nas', href: '#o-nas' },
+  { label: 'Strona główna', href: '#start' },
+  { label: 'Oferta', href: '#uslugi' },
+  { label: 'Problemy', href: '#rozwiazania' },
+  { label: 'Współpraca', href: '#o-nas' },
   { label: 'Kontakt', href: '#kontakt' },
 ]
 
@@ -85,7 +85,7 @@ export function SiteFooter() {
             © {year} InGEN Systems. Wszelkie prawa zastrzeżone.
           </p>
           <a
-            href="#"
+            href="/polityka-prywatnosci"
             className="text-sm text-primary-foreground/60 transition-colors hover:text-primary-foreground"
           >
             Polityka prywatności
