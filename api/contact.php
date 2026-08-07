@@ -75,13 +75,14 @@ $ipAddress = filter_var($ipAddress, FILTER_VALIDATE_IP) ? $ipAddress : 'brak dan
  */
 $SMTP_HOST = ''; // Adres serwera SMTP OVH.
 $SMTP_PORT = 587; // Port SMTP OVH.
-$SMTP_USERNAME = ''; // Nazwa użytkownika SMTP.
-$SMTP_PASSWORD = ''; // Hasło SMTP.
+$SMTP_SECURE = ''; // Opcjonalny typ szyfrowania dla niestandardowego portu SMTP.
+$SMTP_USER = ''; // Nazwa użytkownika SMTP.
+$SMTP_PASS = ''; // Hasło SMTP.
 $SMTP_FROM = ''; // Adres nadawcy.
 $SMTP_FROM_NAME = 'InGEN Systems'; // Nazwa nadawcy.
 $SMTP_TO = ''; // Adres odbiorcy wiadomości.
 
-if ($SMTP_HOST === '' || $SMTP_USERNAME === '' || $SMTP_PASSWORD === '' || $SMTP_FROM === '' || $SMTP_TO === '') {
+if ($SMTP_HOST === '' || $SMTP_USER === '' || $SMTP_PASS === '' || $SMTP_FROM === '' || $SMTP_TO === '') {
     logMailError('Nie uzupełniono konfiguracji SMTP.');
     respond(500, ['success' => false]);
 }
@@ -96,9 +97,18 @@ try {
     $mail->Host = $SMTP_HOST;
     $mail->Port = $SMTP_PORT;
     $mail->SMTPAuth = true;
-    $mail->Username = $SMTP_USERNAME;
-    $mail->Password = $SMTP_PASSWORD;
-    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Username = $SMTP_USER;
+    $mail->Password = $SMTP_PASS;
+
+    if ($SMTP_PORT === 465) {
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+    } elseif ($SMTP_PORT === 587) {
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    } elseif ($SMTP_SECURE !== '') {
+        $mail->SMTPSecure = $SMTP_SECURE;
+    } else {
+        throw new Exception('Nieprawidłowa konfiguracja szyfrowania SMTP.');
+    }
     $mail->CharSet = PHPMailer::CHARSET_UTF8;
     $mail->isHTML(false);
 
