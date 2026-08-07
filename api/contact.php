@@ -87,7 +87,9 @@ if ($SMTP_HOST === '' || $SMTP_USERNAME === '' || $SMTP_PASSWORD === '' || $SMTP
 }
 
 try {
-    require_once __DIR__ . '/vendor/autoload.php';
+    require_once __DIR__ . '/PHPMailer/Exception.php';
+    require_once __DIR__ . '/PHPMailer/SMTP.php';
+    require_once __DIR__ . '/PHPMailer/PHPMailer.php';
 
     $mail = new PHPMailer(true);
     $mail->isSMTP();
